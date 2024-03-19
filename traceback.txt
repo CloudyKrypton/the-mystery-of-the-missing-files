@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 92, in script
+    hide david
+ScriptError: could not find label 'scene3b'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 92, in script
+    hide david
+  File "C:\Users\Janet\Desktop\renpy-8.2.1-sdk\renpy\ast.py", line 1698, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\Janet\Desktop\renpy-8.2.1-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'scene3b'.
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.2.1.24030407
+The Mystery of the Missing Files 1.0
+Wed Mar 13 16:57:05 2024
