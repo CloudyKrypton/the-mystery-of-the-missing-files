@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 158: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    jump scene4
-    ^
+File "game/script.rpy", line 273: expected ':' not found.
+    label guilty_ending
+                       ^
+
+File "game/script.rpy", line 281: expected ':' not found.
+    label innocent_ending
+                         ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Wed Mar 13 16:57:11 2024
+Tue Mar 19 00:19:54 2024
