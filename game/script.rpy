@@ -33,14 +33,14 @@ label scene1:
 
     scene bg stevesoffice
     show steve horror:
-        xpos 900
+        xpos 850
 
     s "Mario, come quick, it’s an emergency! All our files have disappeared!"
     show mario normal:
-        xpos 400
-    m "What?"
+        xpos 200
+    m "What??"
     show steve normal:
-        xpos 900
+        xpos 850
     s "Marked tests, the spreadsheets of student results, the backup folder and the backup backup folder; they’ve all been wiped from the database."
     m "How is this possible?"
     s "It’s a travesty. What are we going to tell the students? Piazza complaints will pile up by the dozens!"
@@ -59,8 +59,12 @@ label scene2:
     s "Hi David :)"
     m "Hello, David."
     m "We’re here about a couple of missing files. You wouldn’t happen to have interacted with Teaching Machine E recently, have you?"
+    hide david normal
+    show david sheepish
     d "Gentlemen, hello! Teaching Machine E… *chuckles* why no, I, uh, er, haven’t been near that device in a while!"
     s "Right…"
+    hide david sheepish
+    show david normal
     d "Lost files, you say?"
     d "Just the other day I made a note about another professor who was mumbling about removing files on a teaching machine."
 # Steve and Mario exchange glances.
@@ -72,6 +76,9 @@ label scene2:
     d "It seems that I had a lot on my mind that day!"
     d "I may have mixed up thinking about who I spoke to with the lecture material I taught." 
     d "It should be easy enough for you to decipher..."
+    scene bg davidlaptop with dissolve 
+    pause
+    scene bg davidlaptop
 menu:
     "Francois looks correct.":
         jump scene2a
@@ -163,9 +170,9 @@ label scene3bpuzzle:
 label scene4:
     scene bg vic
     show jonathan normal:
-        xpos 400
+        xpos 200
     show jack normal:
-        xpos 1200
+        xpos 1100
     jo "I must say, that bubble tea looks delicious."
     ja "Thank you, a student gave it to me earlier today."
     "*Steve and Mario enter the room*"
@@ -191,9 +198,9 @@ menu:
     "34.":
         scene bg vic
         show jonathan normal:
-            xpos 400
+            xpos 200
         show jack normal:
-            xpos 1200
+            xpos 1100
         s "Is it 34?"
         ja "Looks right to me."
         scene bg ja_computer
@@ -203,9 +210,9 @@ menu:
     "7.":
         scene bg vic
         show jonathan normal:
-            xpos 400
+            xpos 200
         show jack normal:
-            xpos 1200
+            xpos 1100
         s "Is it 7?"
         ja "Are you sure? Try again."
         scene bg ja_computer
@@ -215,18 +222,18 @@ menu:
     "37.":
         scene bg vic
         show jonathan normal:
-            xpos 400
+            xpos 200
         show jack normal:
-            xpos 1200
+            xpos 1100
         s "Is it 37?"
         ja "Are you sure? Try again."
-        jump scene4continued
+        jump scene4apuzzle
     "43.":
         scene bg vic
         show jonathan normal:
-            xpos 400
+            xpos 200
         show jack normal:
-            xpos 1200
+            xpos 1100
         s "Is it 7?"
         ja "Are you sure? Try again."
         scene bg ja_computer
@@ -239,6 +246,18 @@ label scene4continued:
     jo "We got it! Now to enter it into the system…"
 # Typing the password into the system. Ding ding ding!
 # Footage of David.
+    scene bg black
+    "34XX"
+    "Rolling security tapes..."
+    "Right now, the footage of a man accessing Teaching Machine E is playing on camera."
+    "The man enters the dark room, glances around, and sits down. It all looks pretty suspicious."
+    "To Steve and Mario's horror the man turns around for a brief moment - it's David!"
+    "They shut the tape off immediately."
+    scene bg vic
+    show steve horror:
+        xpos 850
+    show mario normal:
+        xpos 200
     s "*Gasp* David!?"
     m "It couldn’t be…"
     jump catching_david
@@ -246,6 +265,10 @@ label scene4continued:
 label catching_david:
     scene bg myhal
     show david normal
+    show steve normal:
+        xpos 1000
+    show mario normal:
+        xpos 50
     m "Give it up, David. We know you’re guilty."
     d "Wait, you don’t understand! I can explain…"
 menu:
@@ -264,12 +287,17 @@ label david_guilty:
 label david_innocent:
     s "Okay, we’ll give you one last chance."
     d "I have been sneaking onto Teaching Machine E. But not for the reason you think."
+    hide david normal
+    show david sheepish
     d "I’ve been using it… to watch AOT reaction videos during break."
     s "…"
     m "What about the files? The video?"
     s "Wait. There's a burried video here in the system!"
 # Zoom back into the video. It's toad or something lol
     m "Why that must be..."
+    hide david
+    hide steve
+    hide mario
     jump innocent_ending
 
 label guilty_ending:
@@ -281,6 +309,7 @@ label guilty_ending:
     return
 
 label innocent_ending:
+    scene bg black
     "Steve and Mario hunted down the one student they knew that fit the description."
     "It turns out that the offending student was a misguided do-gooder, stealing the files in hopes that they would be able to give everyone a high mark on Acorn."
     "The instructors were able to return the marks to their students on time, and only received one or two complaints on piazza, instead of the dreaded dozens." 
