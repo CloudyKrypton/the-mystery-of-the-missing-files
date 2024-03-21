@@ -194,6 +194,9 @@ label scene4:
 
     label scene4apuzzle:
     s "It must be..."
+    scene bg ja_computer with dissolve 
+    pause
+    scene bg ja_computer
 menu:
     "34.":
         scene bg vic
@@ -203,7 +206,6 @@ menu:
             xpos 1100
         s "Is it 34?"
         ja "Looks right to me."
-        scene bg ja_computer
         hide jonathan
         hide jack
         jump scene4continued
