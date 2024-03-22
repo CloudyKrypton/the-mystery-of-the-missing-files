@@ -12,7 +12,7 @@ define jo = Character(name="Jonathan", color="#c8ffc8")
 define ja = Character(name="Jack", color="#c8ffc8")
 
 label start:
-
+    play music "audio/soundtrack.mp3"
     "Our story begins at the end of a semester, with two CSC258 professors."
     "Steve and Mario have been hard at work, and have finished marking exams and finalizing grades."
     "All that was left to do was to upload the results onto acorn…"
@@ -122,7 +122,10 @@ label scene3a:
     jump scene3puzzle
     f "Oh dear, it looks like I mixed up my thoughts with a lecture I was thinking about earlier."
 label scene3puzzle:
-    f "Right now, the number (12121212222222…) is coming to my mind for some reason."
+    f "Right now, the number (011101010001…) is coming to my mind for some reason."
+    scene bg francoiscomputer with dissolve 
+    pause
+    scene bg francoiscomputer
 menu:
     "Definitely Convocation Hall.":
         scene bg uc
@@ -236,7 +239,7 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 7?"
+        s "Is it 43?"
         ja "Are you sure? Try again."
         scene bg ja_computer
         hide jonathan
@@ -244,12 +247,66 @@ menu:
         jump scene4apuzzle
 label scene4continued:
     jo "Here’s my half."
-    jo "(Right as rain./I don’t think it is. Try again.)"
-    jo "We got it! Now to enter it into the system…"
+    scene bg jo_computer
+    hide jonathan
+    hide jack
+
+    label scene4bpuzzle:
+    s "It must be..."
+    scene bg jo_computer with dissolve 
+    pause
+    scene bg jo_computer
+menu:
+    "8 bytes.":
+        scene bg vic
+        show jonathan normal:
+            xpos 200
+        show jack normal:
+            xpos 1100
+        s "Is it 8 bytes?"
+        jo "I don’t think it is. Try again."
+        hide jonathan
+        hide jack
+        jump scene4bpuzzle
+    "16 bytes.":
+        scene bg vic
+        show jonathan normal:
+            xpos 200
+        show jack normal:
+            xpos 1100
+        s "Is it 16 bytes?"
+        jo "I don’t think it is. Try again."
+        scene bg ja_computer
+        hide jonathan
+        hide jack
+        jump scene4bpuzzle
+    "32 bits.":
+        scene bg vic
+        show jonathan normal:
+            xpos 200
+        show jack normal:
+            xpos 1100
+        s "Is it 32 bits?"
+        jo "Right as rain."
+        jump scene4continued2
+    "36 bits.":
+        scene bg vic
+        show jonathan normal:
+            xpos 200
+        show jack normal:
+            xpos 1100
+        s "Is it 36 bits?"
+        jo "I don’t think it is. Try again."
+        scene bg ja_computer
+        hide jonathan
+        hide jack
+        jump scene4apuzzle
+label scene4continued2:
+    s "We got it! Now to enter it into the system…"
 # Typing the password into the system. Ding ding ding!
 # Footage of David.
     scene bg black
-    "34XX"
+    "3432"
     "Rolling security tapes..."
     "Right now, the footage of a man accessing Teaching Machine E is playing on camera."
     "The man enters the dark room, glances around, and sits down. It all looks pretty suspicious."
@@ -284,6 +341,9 @@ label david_guilty:
     d "You won’t find anything."
     m "It’s the end of the line now."
     d "I’ve been framed. Framed!"
+    hide david
+    hide steve
+    hide mario
     jump guilty_ending
 
 label david_innocent:
@@ -303,6 +363,7 @@ label david_innocent:
     jump innocent_ending
 
 label guilty_ending:
+    scene bg black
     "Steve and Mario proceeded to spend the next few weeks hunting down the files on David’s computer, to no avail."
     "Weeks had passed since the marks were due to be released, and piazza complaints were indeed piling up by the dozens." 
     "The instructors had no choice but to let the students self evaluate, and of course, most gave themselves 100s."
