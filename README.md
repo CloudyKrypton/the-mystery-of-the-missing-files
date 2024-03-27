@@ -1,8 +1,14 @@
 # the-mystery-of-the-missing-files
 
-Welcome to the mystery of the missing files!
+Welcome to the Mystery of the Missing Files!
 
-The game is fully playable now if you clone all the files and run it in Ren'py launcher.
-I will upload a demo video and figure out how to upload the game somewhere online ASAP within the next 7 hrs! For now, I am going to sleep.
+Play the game here: https://itsja.net/TheMysteryoftheMissingFiles-1.0-web/mystery.html
 
 <img src="mystery.png" alt="cover" width="500"/>
+
+### Description
+Mario and Steve are about to upload the final CSC258 results onto Acorn, when a travesty occurs--the files go missing! Solve CS related puzzles to progress through the mystery, and catch the culprit.
+
+All of the characters in this game are CS professors at UofT that have taught me before! You might notice that I matched each professor to the room/building they taught me in, and also gave them a puzzle corresponding to the class they taught :)
+
+Music used: sans. from Undertale
