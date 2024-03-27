@@ -3,13 +3,16 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define s = Character(name="Steve", color="#c8ffc8")
-define m = Character(name="Mario", color="#c8ffc8")
-define d = Character(name="David", color="#c8ffc8")
-define f = Character(name="Francois", color="#c8ffc8")
-define t = Character(name="Tom", color="#c8ffc8")
-define jo = Character(name="Jonathan", color="#c8ffc8")
-define ja = Character(name="Jack", color="#c8ffc8")
+define s = Character(name="Steve", color="#000000", image="steve")
+define m = Character(name="Mario", color="#000000", image="mario")
+define d = Character(name="David", color="#000000")
+define f = Character(name="Francois", color="#000000")
+define t = Character(name="Tom", color="#000000")
+define jo = Character(name="Jonathan", color="#000000")
+define ja = Character(name="Jack", color="#000000")
+
+image side steve left = "steve_side.png"
+image side mario left = "mario_side.png"
 
 label start:
     play music "audio/soundtrack.mp3"
@@ -56,8 +59,8 @@ label scene1:
 label scene2:
     scene bg myhal
     show david normal
-    s "Hi David :)"
-    m "Hello, David."
+    s left "Hi David :)"
+    m left "Hello, David."
     m "We’re here about a couple of missing files. You wouldn’t happen to have interacted with Teaching Machine E recently, have you?"
     hide david normal
     show david sheepish
@@ -87,7 +90,7 @@ menu:
 label scene2a:
     scene bg myhal
     show david normal
-    s "I think we’ll speak with Francois. Thanks, David!"
+    s left "I think we’ll speak with Francois. Thanks, David!"
     d "No problem, good luck!"
 # Steve and Mario turn to go.
     d "Whew."
@@ -96,7 +99,7 @@ label scene2a:
 label scene2b:
     scene bg myhal
     show david normal
-    s "I think we'll speak with Tom. Thanks, David!"
+    s left "I think we'll speak with Tom. Thanks, David!"
     d "No problem, good luck!"
     d "Whew."
     hide david
@@ -106,12 +109,12 @@ label scene3a:
     scene bg uc
     show francois
     f "Ah, Mario and Steve! What can I do for you today?"
-    m "Unfortunately, we ran into a terrible mishap — all the 258 files on Teaching Machine E have been lost."
+    m left "Unfortunately, we ran into a terrible mishap — all the 258 files on Teaching Machine E have been lost."
     f "Oh no!" 
-    s "We were wondering if you had any information on where they could have gone."
+    s left "We were wondering if you had any information on where they could have gone."
     f "Files, files…"
     f "I was just talking to David about removing files on teaching machines last week."
-    m "Yes! He told us to come find you."
+    m left "Yes! He told us to come find you."
     f "I had seen some professors remove a mass amount of files on a lab computer earlier that day."
     f "I wanted to ask them more about it today in fact, but they were headed towards a building and I didn't catch them." 
     f "Which one was it again?"
@@ -130,7 +133,7 @@ menu:
     "Definitely Convocation Hall.":
         scene bg uc
         show francois
-        s "We'll head to Convocation Hall."
+        s left "We'll head to Convocation Hall."
         f "Are you sure? I have a nasty feeling about that one. Why don’t you choose again?"
         scene bg francoiscomputer
         hide francois
@@ -138,13 +141,13 @@ menu:
     "It's Emmanuel College.":
         scene bg uc
         show francois
-        s "We'll head to Emmanuel College."
+        s left "We'll head to Emmanuel College."
         f "Excellent choice. I felt that one calling to me, too. Best of luck!"
         jump scene4
     "I like the look of Sanford Flemming.":
         scene bg uc
         show francois
-        s "We'll head to Sanford Flemming."
+        s left "We'll head to Sanford Flemming."
         f "Are you sure? I have a nasty feeling about that one. Why don’t you choose again?"
         scene bg francoiscomputer
         hide francois
@@ -154,11 +157,11 @@ label scene3b:
     scene bg miningbuilding
     show tom
     t "Ah, Mario and Steve! What can I do for you today?"
-    m "Unfortunately, we ran into a terrible mishap — all the 258 files on Teaching Machine E have been lost."
+    m left "Unfortunately, we ran into a terrible mishap — all the 258 files on Teaching Machine E have been lost."
     t "Oh no!" 
-    s "We were wondering if you had any information on where they could have gone."
+    s left "We were wondering if you had any information on where they could have gone."
     t "No, I haven’t heard anything about lost files. Where did you get that idea from?"
-    m "I thought David said—"
+    m left "I thought David said—"
     t "He must have been mistaken. What an odd idea."
     t "At any rate. I may have something to help you out."
     scene bg tomcomputer
@@ -179,24 +182,24 @@ label scene4:
     jo "I must say, that bubble tea looks delicious."
     ja "Thank you, a student gave it to me earlier today."
     "*Steve and Mario enter the room*"
-    s "Hello!"
+    s left "Hello!"
     jo "Why, hello!"
-    m "Good evening professors."
-    m "We’re here to inquire about a mass deletion of files from the Teaching Machines, specifically E."
+    m left "Good evening professors."
+    m left "We’re here to inquire about a mass deletion of files from the Teaching Machines, specifically E."
     ja "Oh, yes. I had recently written 1000 test cases for a bubble tea competition, and a bug in the code accidentally wrote to 1000 files instead…"
     ja "No matter. That all happened on Teaching Machine B, not E."
     ja "What happened to Teaching Machine E?"
-    s "Mayhem! A complete loss of all the CSC258 files."
+    s left "Mayhem! A complete loss of all the CSC258 files."
     jo "Have you checked the security cameras? That might give you a clue."
-    m "Right, the cameras! We completely forgot about those."
-    s "Of course! Aren’t those password protected, though?"
+    m left "Right, the cameras! We completely forgot about those."
+    s left "Of course! Aren’t those password protected, though?"
     ja "Luckily, Jonathan and I each have recorded a part of the password."
     scene bg ja_computer
     hide jonathan
     hide jack
 
     label scene4apuzzle:
-    s "It must be..."
+    s left "It must be..."
     scene bg ja_computer with dissolve 
     pause
     scene bg ja_computer
@@ -207,7 +210,7 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 34?"
+        s left "Is it 34?"
         ja "Looks right to me."
         hide jonathan
         hide jack
@@ -218,7 +221,7 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 7?"
+        s left "Is it 7?"
         ja "Are you sure? Try again."
         scene bg ja_computer
         hide jonathan
@@ -230,7 +233,7 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 37?"
+        s left "Is it 37?"
         ja "Are you sure? Try again."
         jump scene4apuzzle
     "43.":
@@ -239,7 +242,7 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 43?"
+        s left "Is it 43?"
         ja "Are you sure? Try again."
         scene bg ja_computer
         hide jonathan
@@ -252,7 +255,7 @@ label scene4continued:
     hide jack
 
     label scene4bpuzzle:
-    s "It must be..."
+    s left "It must be..."
     scene bg jo_computer with dissolve 
     pause
     scene bg jo_computer
@@ -263,7 +266,7 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 8 bytes?"
+        s left "Is it 8 bytes?"
         jo "I don’t think it is. Try again."
         hide jonathan
         hide jack
@@ -274,7 +277,7 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 16 bytes?"
+        s left "Is it 16 bytes?"
         jo "I don’t think it is. Try again."
         scene bg ja_computer
         hide jonathan
@@ -286,7 +289,7 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 32 bits?"
+        s left "Is it 32 bits?"
         jo "Right as rain."
         jump scene4continued2
     "36 bits.":
@@ -295,14 +298,14 @@ menu:
             xpos 200
         show jack normal:
             xpos 1100
-        s "Is it 36 bits?"
+        s left "Is it 36 bits?"
         jo "I don’t think it is. Try again."
         scene bg ja_computer
         hide jonathan
         hide jack
         jump scene4apuzzle
 label scene4continued2:
-    s "We got it! Now to enter it into the system…"
+    s left "We got it! Now to enter it into the system…"
 # Typing the password into the system. Ding ding ding!
 # Footage of David.
     scene bg black
